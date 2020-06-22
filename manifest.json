@@ -1,7 +1,7 @@
 {
   "name": "BlazorPagesTest",
   "short_name": "BlazorPagesTest",
-  "start_url": "./",
+  "start_url": "./BlazorPagesTest/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#03173d",
