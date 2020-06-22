@@ -1,0 +1,36 @@
+﻿@page "/"
+@using BlazorPagesTest.Models
+@using BlazorPagesTest.Data
+
+@code
+{
+    private IEnumerable<Student> Students => TestData.Students;
+}
+
+@if (Students is null)
+{
+    <div>Загрузка данных...</div>
+}
+else
+{
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-sm-1 font-weight-bold">Id</div>
+            <div class="col-sm font-weight-bold">Фамилия</div>
+            <div class="col-sm font-weight-bold">Имя</div>
+            <div class="col-sm font-weight-bold">Отчество</div>
+            <div class="col-sm font-weight-bold">Дата рождения</div>
+        </div>
+        <hr/>
+        @foreach (var student in Students)
+        {
+            <div class="row p-2">
+                <div class="col-sm-1">@student.Id</div>
+                <div class="col-sm">@student.Surname</div>
+                <div class="col-sm">@student.Name</div>
+                <div class="col-sm">@student.Patronymic</div>
+                <div class="col-sm">@student.Birthday</div>
+            </div>
+        }
+    </div>
+}
